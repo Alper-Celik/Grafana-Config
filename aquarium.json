@@ -50,8 +50,8 @@
                       "spec": {
                         "direction": "backward",
                         "editorMode": "code",
-                        "expr": "topk(15,\nsum by (user) (\n  count_over_time(\n    {unit=\"sshd.service\",host=\"hetzner-server-1\"} |= \"Invalid user\" | regexp \"Invalid user (?P\u003cuser\u003e\\\\S+) from\"  [$__range] \n  )\n))",
-                        "queryType": "instant"
+                        "expr": "topk(15,\nsum by (user) (\n  count_over_time(\n    {unit=\"sshd.service\",host=\"hetzner-server-1\"} |= \"Invalid user\" | regexp \"Invalid user (?P\u003cusername\u003e\\\\S+) from\"  [$__range] \n  )\n))",
+                        "queryType": "range"
                       },
                       "version": "v0"
                     },
