@@ -50,7 +50,7 @@
                       "spec": {
                         "direction": "backward",
                         "editorMode": "code",
-                        "expr": "topk(15,\nsum by (user) (\n  count_over_time(\n    {unit=\"sshd.service\",host=\"hetzner-server-1\"} |= \"Invalid user\" | regexp \"Invalid user (?P\u003cuser\u003e\\\\S+) from\"  [$__range] \n  )\n))",
+                        "expr": "topk(15,\nsum by (user) (\n  count_over_time(\n    {unit=\"sshd.service\"} |= \"Invalid user\" | regexp \"Invalid user (?P\u003cuser\u003e\\\\S+) from\"  [$__range] \n  )\n))",
                         "queryType": "instant"
                       },
                       "version": "v0"
@@ -176,7 +176,7 @@
                 "xTickLabelSpacing": 0
               }
             },
-            "version": "13.0.9"
+            "version": "13.0.12"
           }
         }
       }
@@ -201,7 +201,20 @@
         ]
       }
     },
-    "links": [],
+    "links": [
+      {
+        "asDropdown": false,
+        "icon": "external link",
+        "includeVars": false,
+        "keepTime": false,
+        "tags": [],
+        "targetBlank": true,
+        "title": "Source (GitHub)",
+        "tooltip": "View source file in repository",
+        "type": "link",
+        "url": "https://github.com/Alper-Celik/Grafana-Config/blob/main/aquarium.json"
+      }
+    ],
     "liveNow": false,
     "preload": false,
     "tags": [],
